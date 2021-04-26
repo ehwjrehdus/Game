@@ -1,14 +1,25 @@
-print("갤러그 게임 시작")
-print("적 비행기 발생")
-print("1. 발사 2. 오른쪽이동 3. 왼쪽이동 ")
-number = input("숫자를 입력하세요: ")
-print("당신의 입력값?", number)
-# 만약에 1번을 누르면 총알 발사
-if number == "1":
-    print("총알 발사")
-# 만약에 2번을 누르면 오른쪽
-if number == "2":
-    print("오른쪽")
-# 만약에 3번을 누르면 왼쪽
-if number == "3":
-    print("왼쪽")
+import random 
+
+print('영어 단어 번역 게임')
+print('영어 단어를 번역하는 게임 입니다.')
+
+dictionary = {
+    'lion': '사자', 
+    'apple': '사과',
+    'airplane': '비행기',
+    'zoo': '동물원',
+    'sun': '태양'
+}
+
+keys = list(dictionary.keys())
+random.shuffle(keys)
+
+for english in keys:
+    korean = dictionary[english]
+
+    guess = input('{} 영어 단어를 번역하세요: '.format(english))
+
+    if guess == korean: 
+        print('영어 단어의 번역이 맞습니다.') 
+    else: 
+        print('영어 단어의 번역이 틀립니다.')
